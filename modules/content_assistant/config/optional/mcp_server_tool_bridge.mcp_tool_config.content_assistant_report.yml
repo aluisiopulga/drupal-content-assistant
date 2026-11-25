@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - content_assistant
+id: content_assistant_report
+tool_id: content_assistant_report
+description: 'Count the content of a collection per group or per year.'

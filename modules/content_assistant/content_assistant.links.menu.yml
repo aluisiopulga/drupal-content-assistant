@@ -1,0 +1,5 @@
+content_assistant.settings:
+  title: 'Content assistant'
+  description: 'Choose which content AI assistants can search and where they may create drafts.'
+  route_name: content_assistant.settings
+  parent: system.admin_config_services

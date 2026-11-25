@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<ruleset name="drupal-business-modules">
+  <description>Drupal coding standards for the modules in this repository.</description>
+  <file>modules</file>
+  <arg name="extensions" value="php,module,install,inc,yml"/>
+  <arg name="colors"/>
+  <arg value="sp"/>
+  <rule ref="Drupal">
+    <!-- The "version" key is kept on purpose: these modules are installed by
+         copying or through a Composer path repository, not packaged by
+         drupal.org, so nothing else would add it. -->
+    <exclude name="Drupal.InfoFiles.AutoAddedKeys.Version"/>
+  </rule>
+  <rule ref="DrupalPractice"/>
+</ruleset>

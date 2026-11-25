@@ -1,0 +1,10 @@
+use content assistant:
+  title: 'Use content assistant tools'
+  description: 'Search, list and count content through the assistant. Results only include content the user can already view.'
+create drafts with content assistant:
+  title: 'Create drafts with the content assistant'
+  description: 'Create unpublished drafts in collections that allow it. The user also needs permission to create that content type.'
+administer content assistant:
+  title: 'Administer the content assistant'
+  description: 'Choose which content the assistant can see and where it may create drafts.'
+  restrict access: true

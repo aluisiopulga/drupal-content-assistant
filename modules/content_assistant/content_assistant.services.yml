@@ -1,0 +1,7 @@
+services:
+  logger.channel.content_assistant:
+    parent: logger.channel_base
+    arguments: ['content_assistant']
+  content_assistant.library:
+    class: Drupal\content_assistant\ContentLibrary
+    arguments: ['@config.factory', '@entity_type.manager', '@entity_field.manager', '@current_user', '@date.formatter', '@logger.channel.content_assistant', '@?Drupal\filter\FilterFormatRepositoryInterface']

@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Lets AI assistants work with site content through permission-checked tools.
+ */
+
+declare(strict_types=1);
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_help().
+ */
+function content_assistant_help(string $route_name, RouteMatchInterface $route_match): ?string {
+  if ($route_name !== 'help.page.content_assistant') {
+    return NULL;
+  }
+
+  $settings = Url::fromRoute('content_assistant.settings')->toString();
+  return '<p>' . t('Content Assistant gives AI assistants four tools: list the content collections, search them (newest first), count them by group or year, and create unpublished drafts. The tools are Tool API plugins, so the same tools work with an MCP client such as Claude (through MCP Server and its Tool API bridge), with the Drupal AI module and with Drush.') . '</p>'
+    . '<p>' . t('Choose the content on the <a href=":url">settings page</a>. Assistants act as a Drupal user and only see what that user can view.', [':url' => $settings]) . '</p>';
+}

@@ -1,0 +1,12 @@
+name: 'Content Assistant'
+type: module
+description: 'Lets AI assistants search, list, count and draft site content through safe, permission-checked tools (Tool API, MCP and the Drupal AI module).'
+package: 'AI'
+core_version_requirement: ^10.5 || ^11
+php: 8.2
+version: '1.0.0'
+configure: content_assistant.settings
+dependencies:
+  - drupal:filter
+  - drupal:node
+  - tool:tool

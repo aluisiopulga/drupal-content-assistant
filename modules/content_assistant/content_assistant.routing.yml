@@ -1,0 +1,7 @@
+content_assistant.settings:
+  path: '/admin/config/services/content-assistant'
+  defaults:
+    _form: '\Drupal\content_assistant\Form\SettingsForm'
+    _title: 'Content assistant'
+  requirements:
+    _permission: 'administer content assistant'

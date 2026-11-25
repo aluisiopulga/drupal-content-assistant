@@ -1,0 +1,22 @@
+{
+    "name": "aluisiopulga/content_assistant",
+    "description": "Lets AI assistants search, list, count and draft Drupal content through safe, permission-checked tools (Tool API, MCP and the Drupal AI module).",
+    "type": "drupal-module",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Aluísio Ricardo Marques Pulga",
+            "homepage": "https://www.drupal.org/u/aluisiopulga"
+        }
+    ],
+    "require": {
+        "php": ">=8.2",
+        "drupal/core": "^10.5 || ^11",
+        "drupal/tool": "^1.0@beta"
+    },
+    "suggest": {
+        "drupal/mcp_server": "Exposes the tools to Claude and other MCP clients (with drupal/mcp_server_tool_bridge).",
+        "drupal/mcp_server_tool_bridge": "Bridges the Tool API tools into MCP Server.",
+        "drupal/ai": "Lets Drupal AI chatbots and agents use the tools (with the Tool module's AI Connector submodule)."
+    }
+}

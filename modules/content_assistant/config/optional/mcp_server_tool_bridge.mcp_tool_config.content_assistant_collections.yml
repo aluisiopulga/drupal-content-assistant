@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - content_assistant
+id: content_assistant_collections
+tool_id: content_assistant_collections
+description: 'List the content collections you can work with, their groups and whether drafts are allowed. Call this first.'

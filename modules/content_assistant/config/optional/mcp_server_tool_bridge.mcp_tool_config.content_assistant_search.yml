@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - content_assistant
+id: content_assistant_search
+tool_id: content_assistant_search
+description: 'Find content in a collection, newest first. Without keywords it lists the latest items, for example the latest articles of a journal.'
