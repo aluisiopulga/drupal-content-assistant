@@ -45,7 +45,10 @@ class SettingsFormTest extends KernelTestBase {
     $this->installEntitySchema('node');
     $this->installConfig(['filter', 'node', 'content_assistant']);
     NodeType::create(['type' => 'news', 'name' => 'News'])->save();
-    FieldStorageConfig::create(['field_name' => 'body', 'entity_type' => 'node', 'type' => 'text_with_summary'])->save();
+    // Drupal 10 ships the body field storage with the Node module's config.
+    if (!FieldStorageConfig::loadByName('node', 'body')) {
+      FieldStorageConfig::create(['field_name' => 'body', 'entity_type' => 'node', 'type' => 'text_with_summary'])->save();
+    }
     FieldConfig::create(['field_name' => 'body', 'entity_type' => 'node', 'bundle' => 'news', 'label' => 'Body'])->save();
 
     // A half-filled new collection is rejected.

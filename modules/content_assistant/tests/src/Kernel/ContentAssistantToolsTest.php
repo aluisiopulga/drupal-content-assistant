@@ -105,11 +105,14 @@ class ContentAssistantToolsTest extends KernelTestBase {
       'bundle' => 'article',
       'label' => 'Published on',
     ])->save();
-    FieldStorageConfig::create([
-      'field_name' => 'body',
-      'entity_type' => 'node',
-      'type' => 'text_with_summary',
-    ])->save();
+    // Drupal 10 ships the body field storage with the Node module's config.
+    if (!FieldStorageConfig::loadByName('node', 'body')) {
+      FieldStorageConfig::create([
+        'field_name' => 'body',
+        'entity_type' => 'node',
+        'type' => 'text_with_summary',
+      ])->save();
+    }
     foreach (['article', 'news'] as $bundle) {
       FieldConfig::create([
         'field_name' => 'body',
